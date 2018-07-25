@@ -1,0 +1,58 @@
+<!--
+  KeyShot VR
+  (c) Copyright 2012-2014 Luxion ApS - All Rights Reserved.
+
+  Instructions for deploying KeyShotVR to a website and sharing via email. 
+-->
+
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>KeyShotVR instructions</title>
+    <style>
+
+      *, html, body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        color: #666666;
+      }
+
+      code {
+        color: blue;
+        background-color: #F2F2F2;
+        border: 1px solid #ccc;
+        padding: 0 3px 0 3px;
+        border-radius: 3px;
+      }
+
+      .code {
+        color: blue;
+        padding: .3em;
+        background-color: #F2F2F2;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Instructions for sharing KeyShotVR</h2>
+    <p>Below is your KeyShotVR. To view the KeyShotVR by itself open the <i><a href="WaterMax Master_VR.123.html">WaterMax Master_VR.123.html</a></i> file in the <i>WaterMax Master_VR.123</i> folder.</p>
+    <iframe src="WaterMax Master_VR.123.html" width="1024" height="768" frameborder="0" scrolling="no">iframe not supported by your browser</iframe>
+    <h2>Uploading to your web site:</h2>
+    <ul>
+      <li>Upload the WaterMax Master_VR.123 folder and <i>WaterMax Master_VR.123.html</i> file to a publicly accessible server.</li>
+      <li>In your webpage where you would like your KeyShotVR to be viewed from, create an <code>&lt;iframe&gt;</code> tag in the <code>&lt;body&gt;</code> section of the html file and update the <code>&lt;src&gt;</code> attribute to reflect the location of the VR on the webserver. Example: <code>&lt;iframe src="WaterMax Master_VR.123.html" width="1024" height="768" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;</code></li>
+      <li>The <i>WaterMax Master_VR.123.html</i> file must be kept in the same directory as the "files" folder.</li>
+    </ul>
+    <p>If you are sharing via email. You will need to send the entire zipped <i>WaterMax Master_VR.123</i> folder to the end recipient.</p>
+
+    <h2>Making VR mobile responsive within iframe tags:</h2>
+    <p>Open <i><a href="WaterMax Master_VR.123.html">WaterMax Master_VR.123.html</a></i> in a code editor and modify the value <code>var downScaleToBrowser</code> to be set to <code>true</code>, if this was not enabled inside of KeyShot. This will allow the VR to downscale with the browser when resized to mobile resolution.</p>
+    <p>If you're embedding the VR within an <code>iframe</code> and wish for the <code>iframe</code> to be fluid, it is important you add the below JS snippet to your website at the botttom of the page just above the closing <code>body</code> tag. This script will enable all <code>iframe</code> tags to be fluid on the page.
+    <p class="code">
+var vrIframe=document.getElementsByTagName("iframe");var pNode=[];for(var i=0;i&lt;vrIframe.length;i++){vrIframe[i].dataset.aspectRatio=vrIframe[i].height/vrIframe[i].width;vrIframe[i].dataset.maxHeight=vrIframe[i].height;vrIframe[i].dataset.maxWidth=vrIframe[i].width;pNode[i]=vrIframe[i].parentNode}
+window.addEventListener("resize",function(){for(var e=0;e&lt;vrIframe.length;e++){var t=pNode[e].clientWidth;if(t&lt;vrIframe[e].dataset.maxWidth){vrIframe[e].height=t*vrIframe[e].dataset.aspectRatio;vrIframe[e].width=t}}});var evt=document.createEvent("UIEvents");evt.initUIEvent("resize",true,false,window,0);window.dispatchEvent(evt)
+   </p>
+  </body>
+</html>

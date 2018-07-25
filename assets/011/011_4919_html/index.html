@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.3.0.min.css" rel="stylesheet" type="text/css">
+<link href="jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
+<script src="jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function KW_getVal(o){ //v1.2
+	var retVal="0";if (o.type=="select-one")
+	{retVal=(o.selectedIndex==-1)?0:o.options[o.selectedIndex].value;}
+	else if (o.length>1){for (var i=0;i<o.length;i++) if (o[i].checked) retVal=o[i].value;
+	} else if (o.type=="checkbox") {retVal=(o.checked)?o.value:0;} else {
+	retVal=Number(o.value)}return parseFloat(retVal);
+}
+
+function KW_calcForm() { //v1.2
+	var str="",a=KW_calcForm.arguments; for (var i=3;i<a.length;i++)
+	str+=(a[i].indexOf("#")==-1)?a[i]:KW_getVal(MM_findObj(a[i].substring(1)));
+	t=Math.round(a[1]*eval(str))/a[1];tS=t.toString();if(a[2]>0){tSp=tS.indexOf(".");
+	if(tSp==-1)	tS+=".";tSp=tS.indexOf(".");while(tSp!=(tS.length-1-a[2])){tS+="0";
+	tSp=tS.indexOf(".");}} MM_findObj(a[0]).value=tS;
+}
+
+
+</script>
+</head>
+
+<body>
+<div data-role="page" id="home">
+  <div data-role="content">
+    <ul data-count-theme="b" data-inset="true" data-role="listview" data-divider-theme="d">
+      <li><a href="#soap">
+      <img src="images/Soap-Icon.png" width="100" height="100" alt=""/>
+<h3>Soap Expenses</h3>
+        <p>Hague Quality Water can save your household up to 75% savings on soap expenses.</p>
+      </a></li>
+      <li><a href="#cleaningproducts">
+      <img src="images/Cleaning-Products-Icon.png" width="100" height="100" alt=""/>
+<h3>Cleaning Products Expenses</h3>
+        <p>Hague Quality Water can save your household up to 75% savings on cleaning product expenses.</p>
+      </a></li>
+      <li><a href="#beverages">
+      <img src="images/Beverages-Icon.png" width="100" height="100" alt=""/>
+<h3>Beverage Expenses</h3>
+        <p>Hague Quality Water can save your household up to 25% savings on beverage expenses.</p>
+      </a></li>
+      <li><a href="#bottledwater">
+      <img src="images/Bottled-Water-Icon.png" width="100" height="100" alt=""/>
+<h3>Bottled Water Expenses</h3>
+        <p>Hague Quality Water can save your household 100% savings on bottled water expenses.</p>
+      </a></li>
+      <li><a href="#clothing">
+      <img src="images/Clothing-Icon.png" width="100" height="100" alt=""/>
+<h3>Clothing Expenses</h3>
+        <p>Hague Quality Water can save your household up to 30% savings on clothing expenses.</p>
+      </a></li>
+      <li><a href="#waterheaterpage">
+      <img src="images/Water-Heater-Icon.png" width="100" height="100" alt=""/>
+<h3>Water Heater Expenses</h3>
+        <p>Hague Quality Water can save your household up to 29% savings on water heater expenses.</p>
+      </a></li>
+      <li><a href="#plumbing">
+      <img src="images/Plumbing-Icon.png" width="100" height="100" alt=""/>
+<h3>Plumbing and Appliances Expenses</h3>
+        <p>Hague Quality Water can save your household up to 50% savings on plumbing and water using appliance expenses.</p>
+      </a></li>
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<div data-role="page" id="waterheaterpage">
+  <div data-role="content">
+  <ul data-count-theme="b" data-inset="true" data-role="listview" data-divider-theme="d">
+      <li><a href="#gaswaterheater">
+      <img src="images/Gas-Water-Heater-Icon.png" width="100" height="100" alt=""/>
+<h3>Gas Water Heater</h3>
+        <p>Hague Quality Water can save your household up to 29% savings on gas water heating expenses.</p>
+      </a></li>
+      <li><a href="#electricwaterheater">
+      <img src="images/Electric-Water-Heater-Icon.png" width="100" height="100" alt=""/>
+<h3>Electric Water Heater</h3>
+        <p>Hague Quality Water can save your household up to 22% savings on electric water heating expenses.</p>
+      </a></li>
+    </ul>
+  <a href="#home">
+  <button data-icon="home" data-iconpos="left" data-theme="a">Back</button>
+  </a>  </div>
+</div>
+
+
+
+
+
+<div data-role="page" id="soap">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="arrow-r">
+      <li><a href="#home">
+      <img src="images/Soap-Icon.png" width="100" height="100" alt=""/>
+<h3>Soap</h3>
+        <p>75% Savings - (Source - Good Housekeeping Magazine Water Conditioning Research Council)</p>
+      </a><a href="#cleaningproducts">Default</a></li>
+    </ul>
+    <div data-role="fieldcontain">
+      <label for="slider1">Amount Per Month Spent:</label>
+      <input name="slider1" type="range" id="slider1" max="100" min="0" value="0" data-theme="c" />
+      <button onClick="KW_calcForm('soap1',100,2,'#slider1','*','.75');KW_calcForm('soap2',100,2,'#soap1','*','12');KW_calcForm('soap3',100,2,'#soap2','*','5');KW_calcForm('soap4',100,2,'#soap2','*','10')" data-theme="e">Calculate</button>
+      
+      
+      <div data-role="fieldcontain">
+        <label for="soap1">Monthly Savings:</label>
+        <input type="text" name="soap1" id="soap1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="soap2">Yearly Savings:</label>
+        <input type="text" name="soap2" id="soap2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="soap3">5 Year Savings:</label>
+        <input type="text" name="soap3" id="soap3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="soap4">10 Year Savings:</label>
+        <input type="text" name="soap4" id="soap4" value=""  />
+      </div>
+      <ul data-count-theme="b" data-inset="true" data-role="listview" data-theme="b" data-divider-theme="d">
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div data-role="page" id="cleaningproducts">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="arrow-r" data-divider-theme="b">
+      <li><a href="#home">
+      <img src="images/Cleaning-Products-Icon.png" width="100" height="100" alt=""/>
+<h3>Cleaning Products</h3>
+        <p>75% Savings - (Source - Good Housekeeping Magazine Water Conditioning Research Council)</p>
+      </a><a href="#beverages">Default</a></li>
+    </ul>
+    <div data-role="fieldcontain">
+      <label for="slider2">Amount Per Month Spent:</label>
+      <input name="slider2" type="range" id="slider2" max="100" min="0" value="0" data-theme="c" />
+      <button onClick="KW_calcForm('cleaningproducts1',100,2,'#slider2','*','.75');KW_calcForm('cleaningproducts2',100,2,'#cleaningproducts1','*','12');KW_calcForm('cleaningproducts3',100,2,'#cleaningproducts2','*','5');KW_calcForm('cleaningproducts4',100,2,'#cleaningproducts2','*','10')" data-theme="e">Calculate</button>
+      
+      
+      <div data-role="fieldcontain">
+        <label for="cleaningproducts1">Monthly Savings:</label>
+        <input type="text" name="cleaningproducts1" id="cleaningproducts1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="cleaningproducts2">Yearly Savings:</label>
+        <input type="text" name="cleaningproducts2" id="cleaningproducts2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="cleaningproducts3">5 Year Savings:</label>
+        <input type="text" name="cleaningproducts3" id="cleaningproducts3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="cleaningproducts4">10 Year Savings:</label>
+        <input type="text" name="cleaningproducts4" id="cleaningproducts4" value=""  />
+      </div>
+      <ul data-count-theme="b" data-inset="true" data-role="listview" data-theme="b" data-divider-theme="d">
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div data-role="page" id="beverages">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="arrow-r" data-divider-theme="b">
+      <li><a href="#home">
+      <img src="images/Beverages-Icon.png" width="100" height="100" alt=""/>
+<h3>Beverages</h3>
+        <p>25% Savings - (Source - National Restaurant Association)</p>
+      </a><a href="#bottledwater">Default</a></li>
+    </ul>
+    <div data-role="fieldcontain">
+      <label for="slider3">Amount Per Month Spent:</label>
+      <input name="slider3" type="range" id="slider3" max="100" min="0" value="0" data-theme="c" />
+      <button onClick="KW_calcForm('beverages1',100,2,'#slider3','*','.25');KW_calcForm('beverages2',100,2,'#beverages1','*','12');KW_calcForm('beverages3',100,2,'#beverages2','*','5');KW_calcForm('beverages4',100,2,'#beverages2','*','10')" data-theme="e">Calculate</button>
+      
+      
+      <div data-role="fieldcontain">
+        <label for="beverages1">Monthly Savings:</label>
+        <input type="text" name="beverages1" id="beverages1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="beverages2">Yearly Savings:</label>
+        <input type="text" name="beverages2" id="beverages2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="beverages3">5 Year Savings:</label>
+        <input type="text" name="beverages3" id="beverages3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="beverages4">10 Year Savings:</label>
+        <input type="text" name="beverages4" id="beverages4" value=""  />
+      </div>
+      <ul data-count-theme="b" data-inset="true" data-role="listview" data-theme="b" data-divider-theme="d">
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div data-role="page" id="bottledwater">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="arrow-r" data-divider-theme="b">
+      <li><a href="#home">
+      <img src="images/Bottled-Water-Icon.png" width="100" height="100" alt=""/>
+<h3>Bottled Water</h3>
+        <p>100% Savings - (Source - Current Local Prices)</p>
+      </a><a href="#clothing">Default</a></li>
+    </ul>
+    <div data-role="fieldcontain">
+      <label for="slider4">Amount Per Month Spent:</label>
+      <input name="slider4" type="range" id="slider4" max="100" min="0" value="0" data-theme="c" />
+      <button onClick="KW_calcForm('bottledwater1',100,2,'#slider4');KW_calcForm('bottledwater2',100,2,'#bottledwater1','*','12');KW_calcForm('bottledwater3',100,2,'#bottledwater2','*','5');KW_calcForm('bottledwater4',100,2,'#bottledwater2','*','10')" data-theme="e">Calculate</button>
+      
+      
+      <div data-role="fieldcontain">
+        <label for="bottledwater1">Monthly Savings:</label>
+        <input type="text" name="bottledwater1" id="bottledwater1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="bottledwater2">Yearly Savings:</label>
+        <input type="text" name="bottledwater2" id="bottledwater2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="bottledwater3">5 Year Savings:</label>
+        <input type="text" name="bottledwater3" id="bottledwater3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="bottledwater4">10 Year Savings:</label>
+        <input type="text" name="bottledwater4" id="bottledwater4" value=""  />
+      </div>
+      <ul data-count-theme="b" data-inset="true" data-role="listview" data-theme="b" data-divider-theme="d">
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div data-role="page" id="clothing">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="arrow-r" data-divider-theme="b">
+      <li><a href="#home">
+      <img src="images/Clothing-Icon.png" width="100" height="100" alt=""/>
+<h3>Clothing</h3>
+        <p>30% Savings on clothing, linens, towles, etc. - (Source - American Laundry Institute Purdue University)</p>
+      </a><a href="#waterheaterpage">Default</a></li>
+    </ul>
+    <div data-role="fieldcontain">
+      <label for="slider5">Amount Per Month Spent:</label>
+      <input name="slider5" type="range" id="slider5" max="500" min="0" step="5" value="0" data-theme="c" />
+      <button onClick="KW_calcForm('clothing1',100,2,'#slider5','*','.30');KW_calcForm('clothing2',100,2,'#clothing1','*','12');KW_calcForm('clothing3',100,2,'#clothing2','*','5');KW_calcForm('clothing4',100,2,'#clothing2','*','10')" data-theme="e">Calculate</button>
+      
+      
+      <div data-role="fieldcontain">
+        <label for="clothing1">Monthly Savings:</label>
+        <input type="text" name="clothing1" id="clothing1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="clothing2">Yearly Savings:</label>
+        <input type="text" name="clothing2" id="clothing2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="clothing3">5 Year Savings:</label>
+        <input type="text" name="clothing3" id="clothing3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="clothing4">10 Year Savings:</label>
+        <input type="text" name="clothing4" id="clothing4" value=""  />
+      </div>
+      <ul data-count-theme="b" data-inset="true" data-role="listview" data-theme="b" data-divider-theme="d">
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div data-role="page" id="gaswaterheater">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="arrow-r" data-divider-theme="b">
+      <li><a href="#home">
+      <img src="images/Gas-Water-Heater-Icon.png" width="100" height="100" alt=""/>
+<h3>Gas Water Heater</h3>
+        <p>29% Savings - (Source - Department of Energy New Mexico State University)</p>
+      </a><a href="#plumbing">Default</a></li>
+    </ul>
+    <div data-role="fieldcontain">
+      <label for="slider6">Amount Per Month Spent:</label>
+      <input name="slider6" type="range" id="slider6" max="200" min="0" value="0" data-theme="c" />
+      <button onClick="KW_calcForm('gaswaterheater1',100,2,'#slider6','*','.29');KW_calcForm('gaswaterheater2',100,2,'#gaswaterheater1','*','12');KW_calcForm('gaswaterheater3',100,2,'#gaswaterheater2','*','5');KW_calcForm('gaswaterheater4',100,2,'#gaswaterheater2','*','10')" data-theme="e">Calculate</button>
+      
+      
+      <div data-role="fieldcontain">
+        <label for="gaswaterheater1">Monthly Savings:</label>
+        <input type="text" name="gaswaterheater1" id="gaswaterheater1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="gaswaterheater2">Yearly Savings:</label>
+        <input type="text" name="gaswaterheater2" id="gaswaterheater2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="gaswaterheater3">5 Year Savings:</label>
+        <input type="text" name="gaswaterheater3" id="gaswaterheater3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="gaswaterheater4">10 Year Savings:</label>
+        <input type="text" name="gaswaterheater4" id="gaswaterheater4" value=""  />
+      </div>
+      <ul data-count-theme="b" data-inset="true" data-role="listview" data-theme="b" data-divider-theme="d">
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div data-role="page" id="electricwaterheater">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="arrow-r" data-divider-theme="b">
+      <li><a href="#home">
+      <img src="images/Electric-Water-Heater-Icon.png" width="100" height="100" alt=""/>
+<h3>Electric Water Heater</h3>
+        <p>22% Savings - (Source - Department of Energy New Mexico State University)</p>
+      </a><a href="#plumbing">Default</a></li>
+    </ul>
+    <div data-role="fieldcontain">
+      <label for="slider7">Amount Per Month Spent:</label>
+      <input name="slider7" type="range" id="slider7" max="200" min="0" value="0" data-theme="c" />
+      <button onClick="KW_calcForm('electricwaterheater1',100,2,'#slider7','*','.22');KW_calcForm('electricwaterheater2',100,2,'#electricwaterheater1','*','12');KW_calcForm('electricwaterheater3',100,2,'#electricwaterheater2','*','5');KW_calcForm('electricwaterheater4',100,2,'#electricwaterheater2','*','10')" data-theme="e">Calculate</button>
+      
+      
+      <div data-role="fieldcontain">
+        <label for="electricwaterheater1">Monthly Savings:</label>
+        <input type="text" name="electricwaterheater1" id="electricwaterheater1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="electricwaterheater2">Yearly Savings:</label>
+        <input type="text" name="electricwaterheater2" id="electricwaterheater2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="electricwaterheater3">5 Year Savings:</label>
+        <input type="text" name="electricwaterheater3" id="electricwaterheater3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="electricwaterheater4">10 Year Savings:</label>
+        <input type="text" name="electricwaterheater4" id="electricwaterheater4" value=""  />
+      </div>
+   <ul data-count-theme="b" data-inset="true" data-role="listview" data-theme="b" data-divider-theme="d">
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div data-role="page" id="plumbing">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="arrow-r" data-divider-theme="b">
+      <li><a href="#home">
+      <img src="images/Plumbing-Icon.png" width="100" height="100" alt=""/>
+<h3>Plumbing and Appliances</h3>
+        <p>50% Savings - (Source - National Association of Home Builders)</p>
+      </a><a href="#totalpage">Default</a></li>
+    </ul>
+    <div data-role="fieldcontain">
+      <label for="slider8">Amount Per Month Spent:</label>
+      <input name="slider8" type="range" id="slider8" max="500" min="0" step="5" value="0" data-theme="c" />
+      <button onClick="KW_calcForm('plumbing1',100,2,'#slider8','*','.50');KW_calcForm('plumbing2',100,2,'#plumbing1','*','12');KW_calcForm('plumbing3',100,2,'#plumbing2','*','5');KW_calcForm('plumbing4',100,2,'#plumbing2','*','10')" data-theme="e">Calculate</button>
+      
+      
+      <div data-role="fieldcontain">
+        <label for="plumbing1">Monthly Savings:</label>
+        <input type="text" name="plumbing1" id="plumbing1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="plumbing2">Yearly Savings:</label>
+        <input type="text" name="plumbing2" id="plumbing2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="plumbing3">5 Year Savings:</label>
+        <input type="text" name="plumbing3" id="plumbing3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="plumbing4">10 Year Savings:</label>
+        <input type="text" name="plumbing4" id="plumbing4" value=""  />
+      </div>
+     <ul data-count-theme="b" data-inset="true" data-role="listview" data-theme="b" data-divider-theme="d">
+      <li><a href="#totalpage">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Customized Total Savings Results</h3>
+        <p>Click here for your personalized savings estimates.</p>
+      </a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div data-role="page" id="totalpage">
+  <div data-role="content">
+    <ul data-inset="true" data-role="listview" data-split-icon="home" data-divider-theme="b">
+      <li><a href="#home">
+      <img src="images/Dollar-Sign-Icon.png" width="100" height="100" alt=""/>
+<h3>Your Savings Analysis</h3>
+        <p>Your estimated savings over a 10 year period.</p>
+      </a><a href="#home">Default</a></li>
+    </ul>
+    <button onClick="KW_calcForm('total1',100,2,'#soap1','+','#cleaningproducts1','+','#beverages1','+','#bottledwater1','+','#clothing1','+','#gaswaterheater1','+','#electricwaterheater1','+','#plumbing1');KW_calcForm('total2',100,2,'#total1','*','12');KW_calcForm('total3',100,2,'#total2','*','5');KW_calcForm('total4',100,2,'#total2','*','10')" data-theme="e">Calculate My Total Savings</button>
+    <div data-role="fieldcontain">
+      <div data-role="fieldcontain">
+        <label for="total1">Monthly Savings:</label>
+        <input type="text" name="total1" id="total1" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="total2">Yearly Savings:</label>
+        <input type="text" name="total2" id="total2" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="total3">5 Year Savings:</label>
+        <input type="text" name="total3" id="total3" value=""  />
+      </div>
+      <div data-role="fieldcontain">
+        <label for="total4">10 Year Savings:</label>
+        <input type="text" name="total4" id="total4" value=""  />
+      </div>
+      <a href="#totalpage">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

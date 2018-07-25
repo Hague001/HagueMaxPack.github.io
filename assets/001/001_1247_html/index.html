@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=512,maximum-scale=1.0" />
+		<style>
+		* {
+			margin: 0;
+			padding: 0;
+			-webkit-user-select: none;
+			-webkit-touch-callout: none;
+			-webkit-tap-highlight-color: transparent;			
+		}
+		body {
+			height:288px;
+			width:512px;
+			margin:auto;
+			background-color:#000;
+			color:#fff;
+			-webkit-transform:translate3d(0,0,0);			
+		}
+		body { background-color:transparent; }
+		
+		.tr body {
+			background:#fff;
+		}
+		.tr img {
+			opacity:0;
+		}		
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			
+			<img src="assets/1_bba14182cdf2e0a14fd53978539f1898_1024x576_crop.png" id="imgseq" width="512" height="288">					
+		</div>
+				
+		<script src="assets/zepto.min.js"></script>
+		<script src="assets/magplus.img.seq.2000.js"></script>
+		<script>
+		WHOnline = {
+			content_url: null,
+			init: function(offline_function, check_url, content_url) {
+				WHOnline.content_url = content_url;	
+				offline_function();
+				if (!check_url || !content_url) return;
+				
+				if (/\?/.test(check_url)) {
+					check_url = check_url + '&';
+				} else {
+					check_url = check_url + '?';					
+				}
+				check_url = check_url+new Date().getTime();
+				
+				$('<img>').load(function(){
+					location.href = WHOnline.content_url;
+				}).attr('src', check_url)
+			}
+		}
+
+		window.onload = function(){
+			$(document).bind('touchstart', function(e){
+				e.preventDefault();
+			})
+			WHOnline.init(function(){
+				$('#imgseq').imgseq( {
+					path: 'assets/',
+					images: ['1_be3a88f17e136dbaa80368f5e3a3a424_1024x576_crop.png','1_776a719191aeb8bef15d68e983df68b1_1024x576_crop.png','1_f9d9cd75a7b3c10d77d5e0b41bb512e8_1024x576_crop.png','1_6b989a739577cf6f8b60ebf0180c10f3_1024x576_crop.png','1_1ba46f400abdd3f15a65422e27899cad_1024x576_crop.png','1_0e54f4b311393012e3fb20f5a1e3d5bb_1024x576_crop.png','1_5cddd68c63c010d064e2aa1be14ad58c_1024x576_crop.png','1_d88545fbc38e5e9b42b4d4d2b42c1296_1024x576_crop.png','1_ab0bf8aac55335c9b83e2856cd9bd467_1024x576_crop.png','1_2ac2ea45d740c1713370210864bfd134_1024x576_crop.png','1_d264280395580c37aced4d00cc5ed9b9_1024x576_crop.png','1_b0f9403bf27663ef1de2827d84674b9c_1024x576_crop.png','1_f777e398e880c01f8d4de8807f4a2218_1024x576_crop.png','1_b8c104b612e5f977df401e7466a621a6_1024x576_crop.png','1_bf2dc36c6570bfc9db2e3ae0c84a2667_1024x576_crop.png','1_29e491ea3a034ff464224869f77607aa_1024x576_crop.png','1_05d88f9a527fdf48075c4e55e952d170_1024x576_crop.png','1_a33b2adb4a4fcee3a88d52c1b624ea70_1024x576_crop.png','1_68e6feb690875518726585623b66444b_1024x576_crop.png','1_603d80968af1de84b59546a5fc05aa18_1024x576_crop.png','1_f3a5b6a18fe7c0beebea6691546a1bc2_1024x576_crop.png','1_3bb8bb2e038ccc514fd5f7b615d3b4de_1024x576_crop.png','1_110eafae4e6c0fb0866dd8ae1dee2f99_1024x576_crop.png','1_f0c07cf4e0a0dde6e26b9ba11d67faf7_1024x576_crop.png','1_4a75ce0168ba0cff69e7e1c61f68c2c4_1024x576_crop.png','1_2a9df36f62386105ac81f19a25192ef0_1024x576_crop.png','1_78e4fc4b2b9e77dd82ddc4a01777152a_1024x576_crop.png','1_8c871ad41f42772d1fa59216714967c7_1024x576_crop.png','1_dcdddcdc2efe61a037ba4fdf5e747789_1024x576_crop.png','1_53fec0501c26a8fb7ff1c701af47ba38_1024x576_crop.png','1_b7e02788631f336d1aa24824014cf2cc_1024x576_crop.png','1_9575f79c1f5c9a92bd903f12b3117c47_1024x576_crop.png','1_e58a0a40c4137dea598d86e250d6aecc_1024x576_crop.png','1_c781f2e46f9affd502f9439994319f3b_1024x576_crop.png','1_ec4e1e7b40c4cb8651c977899df63c45_1024x576_crop.png','1_bba14182cdf2e0a14fd53978539f1898_1024x576_crop.png'],
+					play_direction_forward: false,
+					swipe_direction: true,
+					autoplay:true,		
+					show_frames: 0,
+					images_per_second: 10,
+					swipe_horizontal: true,
+					use_acceleration: false,
+					loop: true				});
+			}, '', '');
+		}	
+		</script>
+	</body>
+</html>
